@@ -9,7 +9,7 @@ using namespace std ;
 
 
 
-//Implementation of bubble sort algorithm using while loop.
+//Implementation of bubble sort algorithm using while loop..
 int* Bubble_Sort_While(int* array, int array_size){
     int temp ; 
     int temp_2 ;
@@ -18,7 +18,7 @@ int* Bubble_Sort_While(int* array, int array_size){
     while(check){
         check = false ;
         for(int i = 0 , j = 1; i < array_size - 1 , j < array_size ; i++ , j++ ){
-            //Swapping adjacent elements.
+            //Swapping adjacent elements .
             if(array[i] > array[j]){
                 check = true ;
                 temp = array[i] ;
