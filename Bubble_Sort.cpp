@@ -1,6 +1,12 @@
 #include <iostream>
 using namespace std ;
 
+//Note: In the bubble sort algorithm the number of times the second for loop runs is n - 2
+//Where n is the size of the array
+//In each iteration in bubble sort the maximum value in that iteration is always placed at the 
+//last position checked by the conditional statement.
+
+
 
 //Implementation of bubble sort algorithm using while loop
 int* Bubble_Sort_While(int* array, int array_size){
@@ -11,6 +17,7 @@ int* Bubble_Sort_While(int* array, int array_size){
     while(check){
         check = false ;
         for(int i = 0 , j = 1; i < array_size - 1 , j < array_size ; i++ , j++ ){
+            //Swapping adjacent elements
             if(array[i] > array[j]){
                 check = true ;
                 temp = array[i] ;
@@ -26,11 +33,13 @@ int* Bubble_Sort_While(int* array, int array_size){
 }
 
 
+//Implementation of bubble sort algorithm using for loop
 int* Bubble_Sort_For(int* array, int array_size){
     int temp ;
     int temp2 ; 
     for(int i = 1 ; i < array_size ; i++){
         for(int j = 0; j < array_size - i; j++){
+            //Swapping adjacent elements
             if(array[j] > array[j + 1]){
                 temp = array[j] ;
                 temp2 = array[j + 1] ;
@@ -49,6 +58,7 @@ int main(){
     int* output_array = Bubble_Sort_For(array,array_size) ;
     int* output_array_while = Bubble_Sort_While(array,array_size) ;
 
+    //For loop to print out the ordered lists
     for(int i = 0 ; i < 10 ; i++){
         cout << output_array[i] << " " ;
     }
