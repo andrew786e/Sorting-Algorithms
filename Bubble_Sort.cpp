@@ -5,6 +5,7 @@ using namespace std ;
 //Where n is the size of the array
 //In each iteration in bubble sort the maximum value in that iteration is always placed at the 
 //last position checked by the conditional statement.
+//The algorithmic complexity of the code is O(n^2)
 
 
 
@@ -17,7 +18,7 @@ int* Bubble_Sort_While(int* array, int array_size){
     while(check){
         check = false ;
         for(int i = 0 , j = 1; i < array_size - 1 , j < array_size ; i++ , j++ ){
-            //Swapping adjacent elements
+            //Swapping adjacent elements.
             if(array[i] > array[j]){
                 check = true ;
                 temp = array[i] ;
