@@ -39,9 +39,44 @@ int* Insertion_Algorithm(int* array, int size_of_array){
     return array ;
 }
 
+int* Insertion_Algorithm_2(int* array, int size_of_array){
+
+    int* sorted_array = new int[size_of_array] ;
+
+    sorted_array[0] = array[0] ;
+
+    bool check = false ;
+
+    for(int i = 0; i < size_of_array ; i++){
+        int count = 0 ;
+        int value = array[i] ; 
+        int temp2 ;
+        int temp ;
+        for(int j = 0; j <= i ; j++){
+            if(check){
+                temp2 = array[j] ;
+                array[j] = temp ;
+                temp = temp2 ;
+            }
+
+            if((array[j] > value) && count == 0){
+                temp = array[j] ;
+                array[j] = value ; 
+                check = true ;
+                count = 1 ;
+            }
+            
+        }
+
+        check = false ;
+    }
+    return array ;
+}
+
+
 int main(){
     int array[8] = {1,8,3,7,5,2,2,6} ;
-    int* output_array = Insertion_Algorithm(array,8) ;
+    int* output_array = Insertion_Algorithm_2(array,8) ;
 
     for(int i = 0; i < 8; i++){
         cout << output_array[i] << " " ;
