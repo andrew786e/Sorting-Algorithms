@@ -1,29 +1,34 @@
 #include <iostream>
 using namespace std ;
 
+// This function sorts out an array in increaing order 
+//Arguments: Array: The array of values 
+//Size_of_array : Number of elements in the array.
 int* Insertion_Algorithm(int* array, int size_of_array){
     int temp ;
     int placement_index;
     int count = 0 ;
     bool move = false ; 
+    //Selects elements from unordered list
     for(int i = 0 ; i < size_of_array; i++){
         int temp2 ;
         int temp1 ;
         temp = array[i] ;
         for(int j = 0 ; j <= i ; j++){
+            // Moves elements on the list from left to right 
             if(move){
                 temp2 = array[j] ;
                 array[j] = temp1 ;
                 temp1 = temp2 ;
             }
 
+            //Checks for where the element is meant to be inserted
             if(array[j] > temp and count == 0){
                 count = 1 ;
                 placement_index = j ;
                 move = true ;
                 temp1 = array[j] ;
                 array[j] = temp;
-                cout << array[j] << endl ;
             }
 
         }
